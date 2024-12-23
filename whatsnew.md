@@ -1,4 +1,4 @@
-### 0.5.0
+### 0.5.1
 
 - [update] exports env object for svelte-env in lib-dom
 
