@@ -1,21 +1,23 @@
 import { Writable, writable } from "svelte/store";
-import { deepCopy, isSame } from "wx-lib-state";
+import { deepCopy, isSame } from "@svar-ui/lib-state";
 
-function copy(obj: any, deep: boolean) {
+function copy<T>(obj: T, deep: boolean): T {
 	if (deep) return deepCopy(obj);
 	return { ...obj };
 }
 
-export function form(
-	v: any,
-	changes: (v: any) => void,
+type Store<T> = Writable<T> & { reset: (v: T) => void };
+
+export function form<T>(
+	v: T,
+	changes: (v: T) => void,
 	config?: { debounce?: number; deepCopy: boolean }
-) {
+): Store<T> {
 	const deepCopyMode = config && config.deepCopy;
 
 	let ready = false;
 	let timer: ReturnType<typeof setTimeout> = null;
-	const store = writable(v) as Writable<any> & { reset: (v: any) => void };
+	const store = writable(v) as Store<T>;
 	const { set } = store;
 	let base = copy(v, deepCopyMode);
 
@@ -34,7 +36,7 @@ export function form(
 	};
 	store.reset = function (v) {
 		ready = false;
-		base = {};
+		base = {} as T;
 		store.set(v);
 	};
 	store.subscribe(v => {

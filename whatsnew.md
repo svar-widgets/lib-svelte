@@ -1,3 +1,7 @@
+### 0.5.2
+
+- [dev] toolchain changed to tsup
+
 ### 0.5.1
 
 - [update] exports env object for svelte-env in lib-dom
