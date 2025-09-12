@@ -2,7 +2,7 @@
 
 @svar-ui/lib-svelte is a library that provides helpers for Svelte integration.
 
-![NPM package](https://img.shields.io/npm/v/wx-lib-svelte)
+![NPM package](https://img.shields.io/npm/v/@svar-ui/lib-svelte)
 
 ## Content of the package
 
