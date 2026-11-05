@@ -1,3 +1,7 @@
+### 0.5.3
+
+- [dev] use latest lib-state
+
 ### 0.5.2
 
 - [dev] toolchain changed to tsup

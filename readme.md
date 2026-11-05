@@ -1,6 +1,6 @@
-# @svar-ui/lib-svelte
+# @svar/lib-svelte
 
-@svar-ui/lib-svelte is a library that provides helpers for Svelte integration.
+@svar/lib-svelte is a library that provides helpers for Svelte integration.
 
 ![NPM package](https://img.shields.io/npm/v/@svar-ui/lib-svelte)
 
